@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+  <link rel="stylesheet" href="ind.css">
+</head>
+<body>
+  <div class="weather-layout">
+    <!-- Search -->
+    <div class="search-box">
+      <input type="text" id="city" placeholder="Enter city name">
+      <button id="get">Get Weather</button>
+    </div>
+
+    <!-- Today Section -->
+    <div class="today-section">
+      <div class="temp-display" id="today-weather">Get Your Weather Now ..</div>
+       <div class="extra-info-wrapper">
+        <div class="extra-info" id="extra-info"></div>
+        <button class="viewDetail" id="viewDetail">View Details</button>
+      </div>
+
+      <!-- Detail Popup -->
+      <div class="detail_popup" id="detail_popup">
+        <div id="Detail_info" class="Detailinfo"></div>
+        <button id="close" class="close">X</button>
+      </div>
+    </div>
+
+    <!-- Forecast Section -->
+    <div class="forecast-wrapper">
+      <h3 id="heading"></h3>
+      <div class="forecast" id="forecast" style="display:flex; flex-wrap:wrap; gap:1rem;"></div>
+    </div>
+
+    <!-- Needed for JS -->
+    <div id="result"></div>
+  </div>
+
+  <!-- Error Popup -->
+  <div id="popup" class="popup_error" style="display:none;">
+    <div class="popup-card">
+      <h2>Error!</h2>
+      <p id="msg" class="msg_block"></p>
+      <button id="closePopup" class="close_error">OK</button>
+    </div>
+  </div>
+
+  <script src="ind.js"></script>
+</body>
+</html>

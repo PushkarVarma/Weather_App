@@ -1,0 +1,302 @@
+/* =======================
+   General Page Setup
+======================= */
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(270deg, #000000, #2f9fa4, #1e3c72);
+  background-size: 600% 600%;
+  animation: gradientShift 15s ease infinite;
+  margin-top: 3%;
+  padding: 0;
+  color: #ffffff;
+}
+
+/* =======================
+   Weather Layout
+======================= */
+.weather-layout {
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* =======================
+   Search Bar
+======================= */
+.search-box {
+  display: flex;
+  height: 55px;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.search-box input {
+  flex: 1;
+  max-width: 500px;
+  padding: 12px 15px;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  font-size: 1.2rem;
+}
+
+.search-box button {
+  padding: 12px 20px;
+  border-radius: 25px;
+  border: none;
+  background: #1e90ff;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.search-box button:hover {
+  background: #1565c0;
+  transform: scale(1.08);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.25);
+}
+
+/* =======================
+   Today Section
+======================= */
+.today-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap; /* For mobile responsiveness */
+}
+
+.temp-display {
+  flex: 1;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: left;
+  font-size: 1.5rem;
+  transition: transform 0.2s;
+}
+
+.temp-display:hover {
+  transform: scale(1.02);
+}
+
+.extra-info {
+  flex: 1;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: right;
+  min-height: 80px;
+  font-size: 1.2rem;
+}
+
+.viewDetail {
+  margin-top: 2px;
+  align-items: right;
+  padding: 8px 16px;
+  margin-left: 60%;
+  border: none;
+  border-radius: 20px;
+  background: #1e90ff;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.viewDetail:hover {
+  background: #1565c0;
+  transform: scale(1.08);
+  box-shadow: #92c6ff 10px 6px 15px;
+}
+
+/* =======================
+   Forecast Section
+======================= */
+.forecast-wrapper {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.forecast {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.forecast div {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 1.25rem;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+.forecast div:hover {
+  transform: translateY(-6px) scale(1.05);
+  background: linear-gradient(135deg, #31a9e5, #84cace);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.25);
+}
+
+/* =======================
+   Error Popup
+======================= */
+.popup_error {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0,0,0,0.6);
+}
+
+.popup-card {
+  background: white;
+  color: black;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.close_error {
+  margin-top: 10px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  background: #e74c3c;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.close_error:hover {
+  background: #c0392b;
+  transform: scale(1.05);
+}
+
+/* =======================
+   Overlay & Popup
+======================= */
+.detail_popup {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.6); 
+  display: none; 
+  align-items: center; 
+  justify-content: center; 
+  z-index: 1000;
+}
+
+.Detailinfo {
+  position: relative;
+  background: #fff;
+  color: #222;
+  border-radius: 16px;
+  padding: 24px 32px 24px 24px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  width: 90%;
+  max-width: 480px;
+  max-height: 80vh;
+  overflow-y: auto;
+  display: grid;
+  gap: 1.2rem;
+  animation: popupIn 0.4s ease-out forwards;
+}
+
+.info_card {
+  background: linear-gradient(135deg, #eef2f3, #dfe9f3);
+  border-radius: 10px;
+  padding: 18px 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+  transition: transform 0.2s;
+}
+
+.info_card:hover {
+  transform: translateY(-3px);
+}
+
+/* Detail lines */
+.Detailinfo p,
+.Detailinfo span,
+.Detailinfo div {
+  margin: 8px 0;
+  font-size: 1.2rem;
+  color: #222;
+}
+
+/* Close button inside popup */
+.close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: crimson;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 34px;
+  text-align: center;
+  transition: background 0.2s, transform 0.2s;
+  z-index: 1001;
+}
+
+.close:hover {
+  background: #c0392b;
+  transform: scale(1.1);
+}
+
+/* =======================
+   Animations
+======================= */
+@keyframes popupIn {
+  0% { opacity: 0; transform: translateY(-20px) scale(0.95); }
+  50% { opacity: 0.7; transform: translateY(5px) scale(1.02); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes popupOut {
+  0% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(0.95); }
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* =======================
+   Responsive
+======================= */
+@media (max-width: 600px) {
+  .Detailinfo {
+    max-width: 98vw;
+    padding: 18px 12px 18px 12px;
+  }
+  .close {
+    top: 9px;
+    right: 9px;
+    width: 28px;
+    height: 28px;
+    font-size: 18px;
+    line-height: 28px;
+  }
+  .today-section {
+    flex-direction: column;
+  }
+  .temp-display, .extra-info {
+    text-align: center;
+  }
+}
