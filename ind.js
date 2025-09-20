@@ -149,7 +149,7 @@ function TodaysDisplay(data) {
 
     const weatherBox = document.querySelector('.today-section');
     if (data.weather[0].main === 'Clouds') {
-        setBackground('Cloud');
+        setBackground('cloud');
     } else if (data.weather[0].main === 'Rain') {
         setBackground('Rain');
     }else if (data.weather[0].main === 'Mist') {
