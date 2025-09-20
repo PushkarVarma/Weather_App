@@ -149,15 +149,14 @@ function TodaysDisplay(data) {
 
     const weatherBox = document.querySelector('.today-section');
     if (data.weather[0].main === 'Clouds') {
-        setBackground('cloud');
+    setBackground('clouds');
     } else if (data.weather[0].main === 'Rain') {
-        setBackground('Rain');
-    }else if (data.weather[0].main === 'Mist') {
-        setBackground('Mist');
-    }
-    else if (data.weather[0].main === 'Thunderstorm') {
-        setBackground('Thunderstrom');
-    }else {
+        setBackground('rain');
+    } else if (data.weather[0].main === 'Mist') {
+        setBackground('mist');
+    } else if (data.weather[0].main === 'Thunderstorm') {
+        setBackground('thunderstorm');
+    } else {
         setBackground('clear');
     }
 }
